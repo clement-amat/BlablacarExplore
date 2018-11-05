@@ -1,0 +1,74 @@
+<div class="container home-container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="main-title">Take a break.</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <h2 class="subtitle">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h2>
+      </div>
+    </div>
+        <form class="main-form" (submit)="onExploreButtonClick()" >
+          <div class="row">
+            <div class="col-md-4">
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fas fa-map-marker-alt"></i></div>
+                </div>
+                <input type="text" name="nPlace" [(ngModel)]="data.place" class="form-control" id="inlineFormInputGroup" placeholder="From">
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fas fa-calendar-alt"></i></div>
+                </div>
+                <input type="date" name="nDate" [(ngModel)]="data.departureDate" class="form-control" id="inlineFormInputGroup" placeholder="When">
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fas fa-user"></i></div>
+                </div>
+                <input name="nSeats" [(ngModel)]="data.seats" type="number" class="form-control" id="inlineFormInputGroup" placeholder="How many">
+              </div>
+            </div>
+
+    
+
+
+          </div>
+          <div class="row mt-4">
+            <div class="col-12 budget">
+              Budget : {{data.budget}} €
+            </div>
+          </div>
+          <div class="row">
+            <div style="text-align:right" class="col-md-3 col-2">
+              {{MIN_PRICE}} €
+            </div>
+            <div class="col-md-6 col-8">
+              <div class="slidecontainer">
+                <input name="nBudget" [(ngModel)]="data.budget" type="range" min="{{MIN_PRICE}}" max="{{MAX_PRICE}}"class="slider" id="myRange">
+              </div>
+            </div>
+            <div class="col-md-3 col-2">
+                {{MAX_PRICE}} €
+              </div>
+          </div>
+
+
+          <div class="row mt-4">
+              <div class="offset-md-5 col-md-2">
+                  <button class="btn btn-primary w-100 main-button" type="submit">
+                    Explore
+                  </button>
+                </div>
+
+          </div>
+        </form>
+  </div>

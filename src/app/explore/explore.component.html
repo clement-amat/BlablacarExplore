@@ -1,0 +1,103 @@
+<div class="container-fluid explore-container">
+  <form class="main-form mb-4" (submit)="onExploreButtonClick()">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text"><i class="fas fa-map-marker-alt"></i></div>
+          </div>
+          <input name="nPlace" [(ngModel)]="data.place" type="text" class="form-control" id="inlineFormInputGroup"
+            placeholder="From">
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text"><i class="fas fa-calendar-alt"></i></div>
+          </div>
+          <input name="nDate" [(ngModel)]="data.departureDate" type="date" class="form-control" id="inlineFormInputGroup"
+            placeholder="When">
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text"><i class="fas fa-user"></i></div>
+          </div>
+          <input name="nSeats" [(ngModel)]="data.seats" type="number" class="form-control" id="inlineFormInputGroup"
+            placeholder="How many">
+        </div>
+      </div>
+
+
+
+
+    </div>
+    <div class="row mt-2">
+      <div class="col-8 budget">
+        Budget : {{data.budget}} €
+      </div>
+    </div>
+    <div class="row">
+      <div style="text-align:right" class="col-md-2 col-2">
+        {{MIN_PRICE}} €
+      </div>
+      <div class="col-md-4 col-8">
+        <div class="slidecontainer">
+          <input name="nBudget" [(ngModel)]="data.budget" type="range" min="{{MIN_PRICE}}" max="{{MAX_PRICE}}" class="slider"
+            id="myRange">
+        </div>
+      </div>
+      <div class="col-md-2 col-2">
+        {{MAX_PRICE}} €
+      </div>
+
+
+      <div class="col-md-4">
+        <button class="btn btn-primary w-100 main-button" type="submit">
+          Explore
+        </button>
+      </div>
+    </div>
+
+  </form>
+
+  <div [@listAnimation]="trips.length">
+    <div *ngFor="let t of trips" class="row mb-2 result-row">
+      <div class="container-fluid result p-2">
+        <div class="row mb-2">
+          <div class="col-12 result-main-title">
+            <div class="d-flex bd-highlight">
+              <div class="mr-auto bd-highlight">{{t.arrival_place.city_name}}</div>
+              <div class="bd-highlight">{{t.price_with_commission.value}} {{t.price_with_commission.symbol}}</div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-2 col-12 travel-date">
+              <i class="fas fa-calendar-alt"></i>
+              {{t.departure_date }}
+            </div>
+
+            <div class="col-md-8 col-12 text-center">
+              09:50
+              <i class="fas fa-arrow-circle-right"></i>
+
+              225km
+              <i class="fas fa-arrow-circle-right"></i>
+              11:52
+            </div>
+
+            <div class="col-md-2 col-12 text-right">
+              <a href="{{t.links._front}}" target="_blank">Go to Blablacar</a>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>

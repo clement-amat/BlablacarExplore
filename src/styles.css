@@ -1,1 +1,144 @@
-/* You can add global styles to this file, and also import other style files */
+@media only screen and (max-device-width : 812px) {
+    .main-form {
+        padding: 4px;
+    }
+
+    .explore-container .main-form{
+        display: none;
+    }
+
+    .travel-date {
+        text-align: center;
+    }
+
+    .result-row {
+        width: 100%;
+    }
+
+}
+html, body {
+    background: url('assets/img/back.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav-link, .navbar-brand {
+    color: white;
+    font-weight: bold;
+}
+
+.nav-link:hover, .navbar-brand{
+    color: darkgoldenrod;
+}
+
+.navbar-toggler-icon > .fas, .navbar-toggler-icon >  .fa-bars {
+    color:white !important;
+}
+
+.main-title {
+    font-weight: 700;
+    text-align: center;
+    color: white;
+    font-size: 3.4em;
+}
+
+.subtitle {
+    color: white;
+    font-size: 1.2em; 
+    text-align: center;
+}
+
+.home-container {
+    margin-top: 16vh;
+}
+
+.main-form {
+    /* background: rgba(255, 255, 255, 0.80);*/
+    background: url('assets/img/brushed-alum.png');
+    background-color:rgba(255,255,255, .88);
+    padding: 32px;
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+button.main-button {
+    background: none;
+    border: 1px solid darkgoldenrod;
+    border-radius: 0;
+    color: darkgoldenrod;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+button.main-button:hover, button.main-button:focus, button.main-button:active  {
+    background: darkgoldenrod !important;
+    border: 1px solid darkgoldenrod !important;
+    color:white !important;
+}
+
+button.main-button:focus, button.main-button:active {
+    box-shadow: 0 0 0 .2rem rgba(184,134,11,.4) !important;
+}
+
+.budget {
+    text-align: center;
+}
+
+
+.main-form input:focus {
+    border-color: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    border-bottom: 2px solid darkgoldenrod;
+    background:none; 
+}
+
+.main-form input {
+    border-radius: 0;
+    background:none;
+    border:none;
+    border-bottom: 2px solid white; 
+}
+
+
+input[type="range"], input[type="range"]:focus {
+    border: none;
+    width: 100%;
+}
+
+
+.main-form .input-group-text {
+    border:none;
+    background:none;
+}
+
+
+.explore-container {
+    padding: 0 !important;
+}
+
+.explore-container .main-form {
+    padding: 16px;
+}
+
+.result {
+    background: url('./assets/img/brushed-alum.png');
+    background-color:rgba(255,255,255, .88);
+    padding: 8px;
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.row {
+    margin-left:auto !important;
+    margin-right:auto !important;
+    width: 100%;
+}
+
+.result-main-title {
+    font-size: 1.6em;
+}
+
+.result-row {
+    width: 90% !important;
+}
