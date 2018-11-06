@@ -15,7 +15,7 @@ export class BlablacarApiService {
   get(data : MainFormData) : Observable<any>{
     let parameters : BlablacarRequest = new BlablacarRequest(data);
 
-    let uri = environment.blablacar_api + "?key=" + environment.blablacar_key +"&locale=fr_FR&_format=json&cur=EUR"; // TODO handle w
+    let uri = environment.blablacar_api + "?key=" + environment.blablacar_key +"&locale=fr_FR&_format=json&cur=EUR"; // TODO 
 
     for (let key in parameters) {
       if (parameters[key]) {
@@ -30,9 +30,11 @@ export class BlablacarApiService {
   // fix problem with date format
   formatTrips(trips : Trip[]) {
     trips.forEach(t => {
-      //console.log(t.departure_date.);
+      let parts = ((t.departure_date) as string).split(/[/ ]/);
+      console.log(parts);
+      t.departure_date = new Date(parseInt(parts[2]), parseInt(parts[1]) - 1, parseInt(parts[0]));
     })
 
-    return null;
+    return trips;
   }
 }

@@ -12,6 +12,7 @@ import {
   query,
   stagger
 } from '@angular/animations';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-explore',
   templateUrl: './explore.component.html',
@@ -44,17 +45,22 @@ export class ExploreComponent implements OnInit {
 
   constructor(
     private formDataService : FormDataService,
-    private blablacarService : BlablacarApiService
+    private blablacarService : BlablacarApiService,
+    private router : ActivatedRoute
   ) { }
 
   ngOnInit() {
     this.trips = [];
     this.data = {} as MainFormData;
     this.data.budget = 30;
+
+    
     if (this.formDataService.data) {
       this.data = this.formDataService.data;
-      this.loadTrips();
+    } else {
+      this.data.place = this.router.snapshot.params['place'];
     }
+    this.loadTrips();
   }
 
   onExploreButtonClick() {
@@ -64,8 +70,8 @@ export class ExploreComponent implements OnInit {
 
   loadTrips() : void {
     this.blablacarService.get(this.data).subscribe(response =>  {
-      this.trips = response.trips
-      //this.trips = this.blablacarService.formatTrips(this.trips);
+      this.trips = response.trips;
+      this.trips = this.blablacarService.formatTrips(this.trips);
     });
   }
 

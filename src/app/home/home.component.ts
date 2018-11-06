@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
 
   onExploreButtonClick() {
     this.formDataService.data = this.data;
-    this.router.navigate(['explore']);
+    this.router.navigate(['explore', this.data.place]);
   }
 
 }

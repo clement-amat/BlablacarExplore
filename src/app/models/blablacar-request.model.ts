@@ -10,8 +10,8 @@ export class BlablacarRequest {
     pmax : number;
 
     constructor(data : MainFormData) {
-        this.pmin = data.budget * 0.9;
-        this.pmax = data.budget * 1.1;
+        this.pmin = data.budget * 0.8;
+        this.pmax = data.budget * 1.2;
 
         this.fn = data.place;
         this.seats = data.seats;

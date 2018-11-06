@@ -5,7 +5,7 @@ import { ExploreComponent } from './explore/explore.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'explore', component: ExploreComponent},
+  {path: 'explore/:place', component: ExploreComponent},
 
   {path: '**', redirectTo: ''}
 ];

@@ -1,9 +1,12 @@
 export class Trip {
     arrival_place : Place;
     price_with_commission : Price;
-    departure_date : Date;
-    distance : Distance;
+    distance : Measure;
+    duration : Measure;
     links : Links;
+    departure_date : any;
+    arrival_date : Date;
+
 }
 
 export class Place {
@@ -19,7 +22,7 @@ export class Price {
     symbol : string;
 }
 
-export class Distance {
+export class Measure {
     value : number;
     unity : string;
 }

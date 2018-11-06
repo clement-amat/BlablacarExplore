@@ -78,14 +78,14 @@
           <div class="row">
             <div class="col-md-2 col-12 travel-date">
               <i class="fas fa-calendar-alt"></i>
-              {{t.departure_date }}
+              {{t.departure_date | date }}
             </div>
 
             <div class="col-md-8 col-12 text-center">
-              09:50
+              {{t.departure_date | date:'shortTime'}}
               <i class="fas fa-arrow-circle-right"></i>
 
-              225km
+              {{t.distance.value}} {{t.distance.unity}}
               <i class="fas fa-arrow-circle-right"></i>
               11:52
             </div>
